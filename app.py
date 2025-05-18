@@ -55,7 +55,7 @@ for note in notes:
             with col1:
                 if st.button(f"❌ Delete", key=f"delete_{note_id}"):
                     note_db.delete_note(note_id)
-                    st.experimental_rerun()
+                    st.rerun()
             with col2:
                 if st.button(f"⬇️ Download PDF", key=f"pdf_{note_id}"):
                     pdf_file = export_to_pdf(note_title, note_content, note_tags, note_created_at, note_reminder)
